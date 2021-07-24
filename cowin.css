@@ -1,0 +1,28 @@
+
+a{
+    position: relative;
+    font-size: 18px;
+    color: white;
+    margin: 10px 10px 10px 10px;
+   
+}
+.list-link{
+    color: white;
+}
+a:after{
+content:"";
+position:absolute;
+background-color: brown;
+height:3px;
+width:0%;
+left:0;
+bottom: 5px;
+transition: 0.4s;
+}
+a:hover{
+    color: brown; 
+}
+
+a:hover:after{
+    width:100%;    
+}
