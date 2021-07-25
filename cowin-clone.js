@@ -13,13 +13,28 @@ xhr.open('GET',url)
 xhr.onreadystatechange = ()=>{
     if(xhr.readyState==4 && xhr.status==200)
     {
-    const response = JSON.parse(xhr.responseText);
-    if(response.sessions ==[])
+    const center_data = JSON.parse(xhr.responseText);
+    console.log(center_data.sessions);
+    if(center_data.sessions.length==0)
     {
-       alert("vaccination is bot available")
+       alert("vaccination is not available");
+       console.log("not available");
     }
-    for(var i=0;i<response.sessions.length;i++){
-    console.log(response.sessions[i].name)
+    else{
+        for(var i=0;i< center_data .sessions.length;i++){
+     // console.log(center_data .sessions[i].name,center_data .sessions[i].address,center_data.sessions[i].fee_type,center_data .sessions[i].available_capacity,center_data .sessions[i].available_capacity_dose1) 
+     //create a number of cards div to display data  
+     var block=document.createElement("div")
+        block.className="box"
+        console.log(block);
+        const h2=document.createElement("h1")
+        block.appendChild(h2)
+        // console.log(h2);
+        h2.textContent=center_data .sessions[i].name
+        const cards=document.getElementById('parent-box')
+        // console.log(cards)
+        cards.appendChild(block)
+        }
     }
 }
 }
@@ -27,9 +42,29 @@ xhr.send()
 }
 const input=document.querySelector("#input-pin")
 const search_pin_btn=document.querySelector("#by-pin-btn")
+// when we try to empty search box.
+input.addEventListener('keydown',(e)=>
+{
+    if(e.key=='Backspace')
+    {
+    const inner_card=document.getElementsByClassName('box')//child of parent-box
+
+    const cards=document.getElementById("parent-box")
+    // console.log(cards)
+    for(var i=0;i<inner_card.length;i++)
+    {
+    cards.removeChild(inner_card[i])
+    }
+}
+})
+input.addEventListener('keyup',(e)=>
+{
+    var input_1=e.target.value;
+})
 search_pin_btn.addEventListener('click',(e)=>{
     e.preventDefault()
     let pincode=input.value;
+    // let pincode=inpu;
     if(pincode==="")
     {
         alert("please enter pincode in search box")
@@ -43,7 +78,7 @@ search_pin_btn.addEventListener('click',(e)=>{
         alert("Input 6 digit pin Only")
     }
     else{
-        console.log(pincode)
+        // console.log(pincode)
         covinByid(pincode)
     }
 })

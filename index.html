@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- adding favicon -->
-    <link rel="icon" href="images/demo.jpg" type="image/x-icon">
+    <link rel="icon" href="./images/favicon.png" type="image/x-icon">
     <title>CoWIN-CloNE</title>
        <!-- Latest compiled and minified CSS -->
        <link rel="stylesheet" href="cowin.css">
@@ -13,30 +13,69 @@
 </head>
 </head>
 <body>
-    <header id="main-header">
-        <div class="upperdiv" style="background-color: rgb(24, 121, 248);">
- upper div
-        </div>
-        <div class="container">
-            <div id="vaccin-img" style="float:left;" >
-                <img src="images/vaccine.png" alt="covid image";>
-            </div>
-           <h1 id="header-title">Vaccine Slote Finder</h1>
-        </div>
-        </header>
+    <header id="main-header"  style="background-color: rgb(24, 121, 248);">
+        <div class="upperdiv">
+ <input type="submit" value="Skip About" class="up-buttons">
+ <input type="submit" value="Contact Me" class="up-buttons">
+ </div>
+</header>
+<div class="container" id="container-full">
         <div class="main">
-            <div class="container-fluid" >
-              <ul class="nav navbar-nav navbar-center">
+        <div class="container-fluid" >
+            <img src="./images/vaccine.png" alt="covid image";>
+            <h1 id="header-title">Vaccine Slote Finder</h1>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">About</a></li>
                 <li><a href="#">Search by Pincode</a></li>
                 <li><a href="#">Search by District Name</a></li>
             </ul>
         </div>
-
-        </div>
-        <div class="container">
+ <!-- about starts -->
+        <div  class="container" id="about">
+                <div class="mySlides" id="mySlidDiv"> 
+                    <div style="float:left;">
+                        <h2>Having trouble finding </h2>
+                    <h2><span>Covid-19 </span>Vaccination Sloat ?</h2>
+                  <h2> <a href="#">Find Now</a></h2>  
+                    
+                    </div>
+                    <div style="margin:-5% 0px 0px 60%">
+                    <img src="./images/back-2.png"></img>
+                </div>
+                </div>
+                <img class="mySlides" src="./images/back3.jpg" style="width:100%">
+                <img class="mySlides" src="./images/tybs-banner-vaccine-1681x492-a.jpg" style="width:100%">
+         </div>
+            <div class="container-search">
+            <div class="searchBox">
+                <h1 style="color: rgb(13, 44, 100);">Search Your Cowin slot</h1>
+                <i class="fa fa-youtube icon"></i>
             <input type="search" placeholder="Enter Pincode" id="input-pin">
-            <input type="submit" value="Search" id="by-pin-btn"></input>
+             <span id="validation_message" style="margin:2%; color:rgb(211, 23, 23);">
+                validation texxt: something wrong
+            </span> <br>
+             <input type="submit" value="Search" id="by-pin-btn" >
+            </div>
+    </div>
+        <div id="parent-box" class="display-data">
+                
         </div>
+        <script>
+            var myIndex = 0;
+            carousel();
+            
+            function carousel() {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              myIndex++;
+              if (myIndex > x.length) {myIndex = 1}    
+              x[myIndex-1].style.display = "block";  
+              setTimeout(carousel, 9000); // Change image every 2 seconds
+            }
+            </script>
         <script src="cowin-clone.js"></script>
 </body>
 </html>
