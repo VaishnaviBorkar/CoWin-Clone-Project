@@ -13,69 +13,89 @@
 </head>
 </head>
 <body>
-    <header id="main-header"  style="background-color: rgb(24, 121, 248);">
+      <header id="main-header"  style="background-color: rgb(24, 121, 248);">
         <div class="upperdiv">
- <input type="submit" value="Skip About" class="up-buttons">
- <input type="submit" value="Contact Me" class="up-buttons">
- </div>
-</header>
-<div class="container" id="container-full">
-        <div class="main">
+           <a href="https://github.com/VaishnaviBorkar/" class="link" style="text-decoration: none;">
+               <img src="https://img.icons8.com/material-outlined/24/000000/github.png"/>
+               </a>
+           <a href="tel:+8999837751" class="link" style="margin-right: 25px;">
+            <img src="https://img.icons8.com/material-sharp/24/000000/phone.png"/>
+           </a>
+        </div>
+     </header>
         <div class="container-fluid" >
             <img src="./images/vaccine.png" alt="covid image";>
             <h1 id="header-title">Vaccine Slote Finder</h1>
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">About</a></li>
-                <li><a href="#">Search by Pincode</a></li>
+                <li><a href="#searchPin">Search by Pincode</a></li>
                 <li><a href="#">Search by District Name</a></li>
             </ul>
-        </div>
+ </div>
  <!-- about starts -->
-        <div  class="container" id="about">
-                <div class="mySlides" id="mySlidDiv"> 
-                    <div style="float:left;">
-                        <h2>Having trouble finding </h2>
-                    <h2><span>Covid-19 </span>Vaccination Sloat ?</h2>
-                  <h2> <a href="#">Find Now</a></h2>  
-                    
-                    </div>
-                    <div style="margin:-5% 0px 0px 60%">
-                    <img src="./images/back-2.png"></img>
-                </div>
-                </div>
-                <img class="mySlides" src="./images/back3.jpg" style="width:100%">
-                <img class="mySlides" src="./images/tybs-banner-vaccine-1681x492-a.jpg" style="width:100%">
-         </div>
-            <div class="container-search">
-            <div class="searchBox">
-                <h1 style="color: rgb(13, 44, 100);">Search Your Cowin slot</h1>
+<div  class="container" id="about">
+              <!-- <img class="mySlides" src="./images/back-2.png" style="height:50vh;"></img> -->
+               <img class="mySlides" src="./images/back3.jpg" style="width:100%">
+               <img class="mySlides" src="./images/tybs-banner-vaccine-1681x492-a.jpg" style="width:100%">
+</div>
+<!--  Search box & button -pincode-->
+<div class="container-search" id="searchPin">
+      <div class="searchBox">
+                <h1 style="color: rgb(13, 44, 100);">
+                    Search Your Cowin slot</h1>
                 <i class="fa fa-youtube icon"></i>
-            <input type="search" placeholder="Enter Pincode" id="input-pin">
-             <span id="validation_message" style="margin:2%; color:rgb(211, 23, 23);">
-                validation texxt: something wrong
+            <input type="search" placeholder="Enter Pincode" id="input-pin"><br>
+             <span id="validation_message" style="margin:2%; color:rgb(211, 23, 23);">                
             </span> <br>
-             <input type="submit" value="Search" id="by-pin-btn" >
-            </div>
-    </div>
-        <div id="parent-box" class="display-data">
+            <button id="by-pin-btn" >Search</button>
+           <!-- <input type="submit" value="Search" id="by-pin-btn" > -->
+      </div>
+</div>
+<!-- Search Resule by Pincode -->
+<!-- <div class="container" id="result"> -->
+        <div class="container" id="parent-box">
                 
         </div>
-        <script>
-            var myIndex = 0;
-            carousel();
-            
-            function carousel() {
-              var i;
-              var x = document.getElementsByClassName("mySlides");
-              for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";  
-              }
-              myIndex++;
-              if (myIndex > x.length) {myIndex = 1}    
-              x[myIndex-1].style.display = "block";  
-              setTimeout(carousel, 9000); // Change image every 2 seconds
-            }
-            </script>
+        <div style="margin-bottom: 30px;"> 
+        <h1 style="color: rgb(13, 44, 100);">
+            Lets do this together to stop the spread of Covid-19 </h1>
+        <hr style="margin:0px 200px 0px  210px;">
+    </div>
+          <div class="footer">
+         <div class="instruction" id="ware-mask">
+             <div>
+                <img src="images/ware-mask.png">
+                 
+                 <h1>Cover Your Mouth And Nose With A Mask</h1>
+             </div>
+
+         </div>
+         <div class="instruction" id="wash-hand">
+            <div>
+                <img src="images/wash-hands.png">
+                <h1>Wash Your Hands Often</h1>
+            </div>
+             
+        </div>
+        <div class="instruction" id="distance">
+            <div>
+                <img src="images/distancing.png">
+                <h1>keep A Distance Of At Least 6pt</h1>
+            </div>
+             
+        </div>
+        <div class="instruction" id="distance">
+            <div>
+                <img src="images/get vaccinated.png">
+                <h1>Get A Covid-19 Vaccine</h1>
+            </div>
+
+        </div>
+        </div>
+        <div>
+            <h2 style="text-align: center;color:blue";>Developed & Design By 
+                <span style="font-size:130%;">Vaishnavi G. Borkar</span></h2>
+        </div>
         <script src="cowin-clone.js"></script>
 </body>
-</html>
+</html> 

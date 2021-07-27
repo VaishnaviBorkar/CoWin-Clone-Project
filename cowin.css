@@ -1,15 +1,14 @@
 h1{
     text-align: center;
     /* font-family:Georgia, 'Times New Roman', Times, serif; */
-    
 
 }
 .upperdiv{
  height:50px;
  text-align:right;
 }
-.up-buttons{
-    margin:10px 20px 10px 10px
+.link{
+    text-decoration: none;
 }
 a{
     position: relative;
@@ -34,66 +33,141 @@ a{
 .mySlides{
     height:430px;
 }
-#mySlidDiv{
-    background-color: rgb(131, 131, 230);
-    text-align: left;
-    padding: 5% 0% 0% 10%;
-}
-#mySlidDiv h2{
-    color: white;
-}
-#mySlidDiv span{
-    font-size:45px;
-    font-weight: 800;
-    color:rgb(109, 12, 173);
-}
-.main{
-background-color: white;
-/* margin:20px 0px 10% 0px */
-}
 
 /* decorate buttons & textboxcs*/
 .container-search{
     align-items: center;
     position: relative;
-    margin-top: 15%;
+    margin-top:10px;
+    height:350px;
 }
 .searchBox{
     position:absolute;
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
-    /* background-color: aqua; */
+
 }
 #input-pin{
-/* display:block; */
 border-radius: 20px;
+outline: none;
 border-style: solid;
 border-width: 2px;
 width:600px;
 height:40px;
 border-color:rgb(83, 81, 81);
 margin-top:40px;
+
 }
 #by-pin-btn{
-/* display:block; */
+outline: none;
 width:150px;
 height:40px;
-margin:0px 0px 10px 38%;
+margin:0px 0px 10px 35%;
 border-radius: 20px;
+background-color: rgb(42, 124, 231);
+color: white;
 }
-.display-data{
-    margin:10px 20% 10px 10px;
-    min-width:auto;
-    background-color: bisque;
+#parent-box{
+    justify-content: center;
 }
 .box{
-    color:pink;
-    display:flex;
-    flex-direction: column;
-    height:100px;
-    width:300px;
-    margin:20px 10px 20px 10px;
-    background-color: purple;
-    justify-content: space-around;
+     position:relative;
+     border-radius: 10px;
+    color:blacks;
+    width:70%; 
+     left:16%;
+    top:50%; 
+    background-color: bisque;
 }
+.name{
+    /* display:inline; */
+    /* float:left; */
+    background-color: rgb(243, 237, 230);
+    padding:10px 10px 0px 10px;
+    color:blue;
+}
+
+.address{
+    padding:10px 20px 10px 20px;
+}
+.vaccine-type
+{
+    padding:10px 20px 0px 20px;
+    /* float:left; */
+}
+.available_capacity{
+    padding:10px 20px 0px 20px;
+}
+.fees-type{
+    /* margin-left:50%; */
+     display:block;
+     float:right;
+     background-color: green;
+     border-radius: 20px;
+     color:white;
+     text-align: center;
+     margin-right:  100px;
+     padding-top: 10px;
+     width:80px;
+     height:40px;
+     
+ }  
+.age-limit{
+    margin-top: 10px;
+    padding:10px 20px 0px 20px;
+    color:red;
+    font-size:20px;
+}
+.dose-1
+{
+    color:rgb(98, 36, 36);
+    padding:10px 20px 0px 20px;
+}
+.dose-2{
+    padding:10px 20px 20px 20px;
+    color:rgb(98, 36, 36)
+}
+
+.footer{
+    display:flex;
+    flex-direction: row;
+    /* height:320px; */
+    justify-content: space-between;
+    min-height: 400px;
+    text-align: center;
+    flex-wrap: wrap;
+    padding:50px 60px 50px 60px;
+    background-color:rgb(24, 121, 248);
+}
+#ware-mask{
+    flex:1;
+    padding-top: 30px;
+    border-radius: 5%;
+    background-color: rgb(187, 239, 241);
+    margin: 10px 20px 10px 10px;
+}
+#wash-hand{
+    flex:1;
+    padding-top: 30px;
+    border-radius: 5%;
+    background-color:rgb(187, 239, 241);
+    margin: 10px 20px 10px 10px;
+
+}
+#distance{
+    flex:1;
+    padding-top: 30px;
+    border-radius: 5%;
+    background-color:rgb(187, 239, 241);
+    margin: 10px 10px 10px 10px;
+
+} 
+#getvaccinated{
+    flex:1;
+    padding-top: 30px;
+    border-radius: 5%;
+    background-color:rgb(187, 239, 241);
+    margin: 10px 10px 10px 10px;
+
+} 

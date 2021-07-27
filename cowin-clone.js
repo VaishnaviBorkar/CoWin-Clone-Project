@@ -1,3 +1,6 @@
+var messege=document.getElementById("validation_message")
+const input=document.querySelector("#input-pin")
+const search_pin_btn=document.querySelector("#by-pin-btn")
 //get current date of system
 let current_date,dt,mm,yyyy
 current_date=new Date()
@@ -21,64 +24,120 @@ xhr.onreadystatechange = ()=>{
        console.log("not available");
     }
     else{
-        for(var i=0;i< center_data .sessions.length;i++){
-     // console.log(center_data .sessions[i].name,center_data .sessions[i].address,center_data.sessions[i].fee_type,center_data .sessions[i].available_capacity,center_data .sessions[i].available_capacity_dose1) 
+        for(var i=0;i< center_data.sessions.length;i++){
      //create a number of cards div to display data  
+     if(center_data.sessions[i].available_capacity>0 &&  center_data.sessions[i].min_age_limit>=18 )
+            //gives only available slots details
+     {
+         var audio=new Audio('D:/FSD/Submit Assignments/Cowin Clone-Ajax/images/successsound.MP3')
+         audio.play()
      var block=document.createElement("div")
         block.className="box"
+        // console.log(block);
+        const name=document.createElement("h1")
+        name.className="name"
+        block.appendChild(name)
+        const address=document.createElement("h2")
+        address.className="address"
+        block.appendChild(address)
+        const vaccine_t_fee=document.createElement("h2")
+        vaccine_t_fee.className="vaccine-type"
+        block.appendChild(vaccine_t_fee)
+        const fees_type=document.createElement("i")
+        fees_type.className="fees-type"
+        block.appendChild(fees_type)
+        const age=document.createElement("h2")
+        age.className="age-limit"
+        block.appendChild(age)
+        const capacity=document.createElement("h2")
+        capacity.className="available_capacity"
+        block.appendChild( capacity)
+        const dose1=document.createElement("h2")
+        dose1.className="dose-1"
+        block.appendChild(dose1)
+        const dose2=document.createElement("h2")
+        dose2.className="dose-2"
+        block.appendChild(dose2)
         console.log(block);
-        const h2=document.createElement("h1")
-        block.appendChild(h2)
-        // console.log(h2);
-        h2.textContent=center_data .sessions[i].name
+        name.textContent=center_data.sessions[i].name
+        fees_type.textContent=center_data.sessions[i].fee_type
+        address.textContent="Address : "+center_data.sessions[i].address+", "+center_data.sessions[i].state_name+", "+center_data.sessions[i].district_name+", "+center_data.sessions[i].pincode;
+        vaccine_t_fee.textContent="Vaccine : "+center_data.sessions[i].vaccine
+        capacity.textContent="Availability : "+center_data.sessions[i].available_capacity
+        age.textContent="Age : 18 & Above"
+        dose1.textContent="Vaccine Dose 1: "+center_data.sessions[i].available_capacity_dose1+" available"
+        dose2.textContent="Vaccine Dose 2: "+center_data.sessions[i].available_capacity_dose2+" available"
         const cards=document.getElementById('parent-box')
         // console.log(cards)
         cards.appendChild(block)
         }
+       
+    //     else {alert("vaccination is not available")}
     }
+}
 }
 }
 xhr.send()
 }
-const input=document.querySelector("#input-pin")
-const search_pin_btn=document.querySelector("#by-pin-btn")
-// when we try to empty search box.
+// when we try to make empty search box.
 input.addEventListener('keydown',(e)=>
 {
-    if(e.key=='Backspace')
-    {
-    const inner_card=document.getElementsByClassName('box')//child of parent-box
+   if(e.key=='Backspace')
+    {  
+        const child=document.getElementById("parent-box").childElementCount
+        // console.log(child)
+        const cards=document.getElementById("parent-box")
+        const inner_card=document.getElementsByClassName('box')
+            for(var i=0;i<child;i++)
+            {
+                // console.log(i)
+            cards.removeChild(inner_card[0])
+            }
+    }
 
-    const cards=document.getElementById("parent-box")
-    // console.log(cards)
-    for(var i=0;i<inner_card.length;i++)
-    {
-    cards.removeChild(inner_card[i])
-    }
-}
 })
-input.addEventListener('keyup',(e)=>
-{
-    var input_1=e.target.value;
-})
-search_pin_btn.addEventListener('click',(e)=>{
-    e.preventDefault()
-    let pincode=input.value;
-    // let pincode=inpu;
-    if(pincode==="")
+input.addEventListener('keyup',(e)=>{ 
+    let pincode=e.target.value;
+    // let pincode=inpu
+     if(isNaN(pincode))
     {
-        alert("please enter pincode in search box")
-    }
-    else if(isNaN(pincode))
-    {
-        alert("Numbers are Allowed Only")
-    }
-    else if(pincode.length!=6)
-    {
-        alert("Input 6 digit pin Only")
+
+        messege.textContent="Please Enter Valid Pincode"
     }
     else{
-        // console.log(pincode)
-        covinByid(pincode)
+        messege.textContent=""
     }
 })
+        search_pin_btn.addEventListener('click',(e)=>{
+         const pincode=input.value
+            if(pincode==="")
+            {
+                messege.textContent="please enter pincode in search box"
+            }
+            else if(pincode.length!=6)
+            {
+               messege.textContent="Please Enter 6 digit pincode"
+            }
+            else{
+            e.preventDefault()
+          console.log(pincode)
+            covinByid(pincode)
+            }
+        
+        })
+           
+// image  sliderr
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 9000); // Change image every 2 seconds
+}
