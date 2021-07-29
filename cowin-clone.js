@@ -32,7 +32,7 @@ xhr.onreadystatechange = ()=>{
             //gives only available slots details
      {
          count+=1
-         var audio=new Audio('./images/successsound.MP3')
+         var audio=new Audio("images/successsound.MP3")
          audio.play()
      var block=document.createElement("div")
         block.className="box"
