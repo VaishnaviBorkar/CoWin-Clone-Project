@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- adding favicon -->
     <link rel="icon" href="./images/favicon.png" type="image/x-icon">
-    <title>CoWIN-CloNE</title>
+    <title>CoWIN-CloNE-2</title>
   <!-- font-fmili -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Ubuntu&display=swap" rel="stylesheet">
 
        <link rel="stylesheet" href="cowin.css">
+  <!-- bootstrap 3 -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-</head>
 </head>
 <body>
       <header id="main-header"  style="background-color: rgb(24, 121, 248);height:40px;">
@@ -27,47 +27,66 @@
            </a>
         </div> -->
      </header>
-        <div class="container-fluid">
+        <div class="container-fluid" >
             <img src="./images/vaccine.png" alt="covid image";>
             <h1 id="header-title">Vaccine Slote Finder</h1>
-              <ul class="nav navbar-nav navbar-right" id="nav">
-                <li><a href="#searchPin" id="pin_link">Search by Pincode</a></li>
-                <li><a href="district.html" id="district_link">Search by District Name</a></li>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html" id="pin_link">Search by Pincode</a></li>
+                <li><a href="#searchDistrict" id="district_link">Search by District Name</a></li>
             </ul>
  </div>
  <!-- about starts -->
 <div  class="container" id="about">
-              <!-- <img class="mySlides" src="./images/back-2.png" style="height:50vh;"></img> -->
-               <img class="mySlides" src="./images/back3.jpg" style="width:100%" alt="something went wrong">
-               <img class="mySlides" src="./images/tybs-banner-vaccine-1681x492-a.jpg" style="width:100%" alt="something went wrong">
-               <img class="mySlides" src="./images/back4.png" style="width:100%" alt="something went wrong"></img>
-               <img class="mySlides" src="./images/back2.jpg" style="width:100%"></img>
+               <img class="mySlides" src="./images/back3.jpg" style="width:100%"> </img>
+               <img class="mySlides" src="./images/tybs-banner-vaccine-1681x492-a.jpg" style="width:100%"></img>
+                <img class="mySlides" src="./images/back4.png" style="width:100%"></img>
+                <img class="mySlides" src="./images/back4.png" style="width:100%"></img>
 </div>
-<!--  Search box & button -pincode-->
-  <!-- Search Resule by Pincode -->
-  <div id="searchPin">
-<div class="container-search">
-      <div class="searchBox">
-                <h1 style="color: rgb(13, 44, 100);">
-                    Check Your Nearest Vaccination Center And Slots Availability</h1>
-            <input type="search" placeholder="Enter Your Pincode" id="input-pin"><br>
-             <span id="validation_message">                
-            </span> <br>
-            <button id="by-pin-btn" >Search</button>
-      </div>
-</div>
-</div>
-<div class="container" id="result">
-    <!-- <h1 class="result-heading">g</h1> -->
-  
-</div>
-
-        <div class="container" id="parent-box">
-               <!-- Search Resule by Pincode -->
-<!-- <div class="container" id="result"> --> 
+  <!-- Search Resule by Districts -->
+  <div  id="searchDistrict">
+<div class="container-search" >
+    <div id="districtSearchBox" class="searchBox" >
+        <h1 style="color: rgb(13, 44, 100);">
+            Check Your Nearest Vaccination Center And Slots Availability</h1>
+            <div class="form-group">
+                <!-- <label for="states-label">Select State : </label> -->
+                <select id="sel-State" class="form-control">
+                    <option id="first-child">Select State</option>
+                </select>
+                <!-- <span id="validation_message"> hhh</span> -->
+            </div>
+            <div class="form-group" >
+                <!-- <label for="district-label">Select District : </label> -->
+                <select class="form-control" id="sel-districts">
+                  <option>Select District</option>
+                 
+            </select>
+            <span id="validation_message"></span>
+            </div>
+        <div>
+            <button type="submit" id="search-btn">
+                Search
+            </button>
         </div>
 
-        <div style="margin-bottom: 20px;" id="inst"> 
+    </div>
+
+</div>
+</div>
+        <div class="container" style="margin-top:10px;" id="result">
+           
+          
+        </div>
+
+        <div class="container" id="parent-box" >
+          
+               
+           
+               <!-- Search Resule by District -->
+        <!-- <div class="container" id="result"> --> 
+        </div>
+
+        <div style="margin-bottom: 30px;" id="inst"> 
         <h1 style="color: rgb(13, 44, 100);" class="header">
             Lets do this together to stop the spread of Covid-19 </h1>
         <hr style="margin:0px 200px 0px  210px;">
@@ -108,7 +127,6 @@
             <h2 style="text-align: center;color:blue";>Developed & Design By 
                 <span style="font-size:130%;">Vaishnavi G. Borkar</span></h2>
         </div>
-        <script src="cowin-clone.js"></script>
-        <!-- <script src="district.js"></script> -->
+        <script src="district.js"></script>
 </body>
 </html> 

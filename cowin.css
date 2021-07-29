@@ -1,7 +1,11 @@
+*{
+    /* font-family: 'Merriweather', serif; */
+font-family: 'Ubuntu', sans-serif;
+font-size:x-large;
+}
 h1{
     text-align: center;
-    /* font-family:Georgia, 'Times New Roman', Times, serif; */
-
+   /* font-family:Georgia, 'Times New Roman', Times, serif; */
 }
 .upperdiv{
  height:50px;
@@ -12,9 +16,9 @@ h1{
 }
 a{
     position: relative;
-    font-size: 18px;
-    color: white;
-    margin: 25px 5px 0px 10px;
+    font-size: 23px;
+    color: blue;
+    margin: 25px 5px 0px 5px;
 }
 #header-title{
     text-align: center;
@@ -46,7 +50,6 @@ a{
     left:50%;
     top:50%;
     transform:translate(-50%,-50%);
-
 }
 #input-pin{
 border-radius: 20px;
@@ -57,8 +60,9 @@ width:600px;
 height:40px;
 border-color:rgb(83, 81, 81);
 margin-top:40px;
-
+font-size: 20px;
 }
+
 #by-pin-btn{
 outline: none;
 width:150px;
@@ -67,6 +71,16 @@ margin:0px 0px 10px 35%;
 border-radius: 20px;
 background-color: rgb(42, 124, 231);
 color: white;
+}
+#by-pin-btn:hover{
+    background-color: rgb(31, 8, 92);
+   color: white;
+   
+}
+#validation_message{
+    margin:2%; 
+    color:rgb(211, 23, 23);
+    font-size:18px
 }
 #parent-box{
     justify-content: center;
@@ -84,7 +98,7 @@ color: white;
     /* display:inline; */
     /* float:left; */
     background-color: rgb(243, 237, 230);
-    padding:10px 10px 0px 10px;
+    /* padding:10px 10px 0px 10px; */
     color:blue;
 }
 
@@ -108,7 +122,7 @@ color: white;
      color:white;
      text-align: center;
      margin-right:  100px;
-     padding-top: 10px;
+     padding-top: 5px;
      width:80px;
      height:40px;
      
@@ -138,21 +152,22 @@ color: white;
     text-align: center;
     flex-wrap: wrap;
     padding:50px 60px 50px 60px;
-    background-color:rgb(24, 121, 248);
+    /* background-color:rgb(24, 121, 248); */
+    background: linear-gradient(to right, rgb(27, 228, 201),rgb(24, 121, 248),rgb(27, 228, 201));
 }
 #ware-mask{
     flex:1;
     padding-top: 30px;
     border-radius: 5%;
     background-color: rgb(187, 239, 241);
-    margin: 10px 20px 10px 10px;
+    margin: 10px 20px 0px 10px;
 }
 #wash-hand{
     flex:1;
     padding-top: 30px;
     border-radius: 5%;
     background-color:rgb(187, 239, 241);
-    margin: 10px 20px 10px 10px;
+    margin: 10px 20px 0px 10px;
 
 }
 #distance{
@@ -160,14 +175,88 @@ color: white;
     padding-top: 30px;
     border-radius: 5%;
     background-color:rgb(187, 239, 241);
-    margin: 10px 10px 10px 10px;
+    margin: 10px 20px 0px 10px;
 
 } 
-#getvaccinated{
+#get-vaccin{
     flex:1;
     padding-top: 30px;
     border-radius: 5%;
     background-color:rgb(187, 239, 241);
-    margin: 10px 10px 10px 10px;
+    margin: 10px 20px 0px 10px;
 
 } 
+.instruction p{
+    margin-top: 40px;
+   color: black;
+   font-size: 25px;
+}
+/* district */
+#sel-State{
+    margin-top: 40px;
+    border-radius: 20px;
+    height:40px;
+    color:black
+}
+#sel-districts{
+    border-radius: 20px;
+    height:40px;
+    color:black
+}
+#search-btn{
+    outline: none;
+    width:200px;
+    height:40px;
+    position:absolute;
+    left:46%;
+    top:100%;
+    transform:translate(-50%,-50%);
+    border-radius: 20px;
+    background-color: rgb(42, 124, 231);
+    color: white;
+    }
+    #search-btn:hover{
+        background-color: rgb(23, 202, 23);
+        color: black;
+    }
+     
+    /* mobile display */
+    @media(max-width:1040px)
+    {
+        #input-pin{
+            width:300px;
+            height:40px;
+            margin-top:40px;
+            }
+            
+#by-pin-btn{
+    margin-left:23%;
+}
+  #header-title{
+    font-size:25px;
+    display:inline;
+    position: absolute;
+    margin:28px 10px 0px 10px
+}
+#nav{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    /* margin:0px 20px 0px  20px; */
+    text-align: center;
+}
+#search-btn{
+    /* outline: none; */
+    width:100px;
+    height:40px;
+    }
+#searchDistrict{
+    margin-top: 50px;
+}
+#inst{
+    margin-top: 60px;
+}
+.result-heading{
+    margin-top:60px;
+}
+}

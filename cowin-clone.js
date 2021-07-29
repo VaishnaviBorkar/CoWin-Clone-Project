@@ -1,3 +1,4 @@
+
 var messege=document.getElementById("validation_message")
 const input=document.querySelector("#input-pin")
 const search_pin_btn=document.querySelector("#by-pin-btn")
@@ -20,16 +21,18 @@ xhr.onreadystatechange = ()=>{
     console.log(center_data.sessions);
     if(center_data.sessions.length==0)
     {
-       alert("vaccination is not available");
+       alert("vaccine is not available");
        console.log("not available");
     }
     else{
+        var count=0;
         for(var i=0;i< center_data.sessions.length;i++){
      //create a number of cards div to display data  
      if(center_data.sessions[i].available_capacity>0 &&  center_data.sessions[i].min_age_limit>=18 )
             //gives only available slots details
      {
-         var audio=new Audio('D:/FSD/Submit Assignments/Cowin Clone-Ajax/images/successsound.MP3')
+         count+=1
+         var audio=new Audio('./images/successsound.MP3')
          audio.play()
      var block=document.createElement("div")
         block.className="box"
@@ -58,7 +61,7 @@ xhr.onreadystatechange = ()=>{
         const dose2=document.createElement("h2")
         dose2.className="dose-2"
         block.appendChild(dose2)
-        console.log(block);
+        // console.log(block);
         name.textContent=center_data.sessions[i].name
         fees_type.textContent=center_data.sessions[i].fee_type
         address.textContent="Address : "+center_data.sessions[i].address+", "+center_data.sessions[i].state_name+", "+center_data.sessions[i].district_name+", "+center_data.sessions[i].pincode;
@@ -74,6 +77,20 @@ xhr.onreadystatechange = ()=>{
        
     //     else {alert("vaccination is not available")}
     }
+    if(count==0)
+    {
+      alert("All centers Vaccine Availability is 0")
+    }
+    else{
+    const result_div=document.getElementById("result")
+    const heading=document.createElement("h2")
+    const head_span=document.createElement("span")
+    heading.className="result-heading"
+    heading.textContent="Slot Search Results :"
+    head_span.textContent=`(${count} Center(s) Found)`
+    heading.appendChild(head_span)
+    result_div.appendChild(heading)
+    }
 }
 }
 }
@@ -84,6 +101,12 @@ input.addEventListener('keydown',(e)=>
 {
    if(e.key=='Backspace')
     {  
+         //1.Remove existing result
+         const result_div=document.getElementsByClassName("result-heading")
+         const div=document.getElementById("result")
+         if(div.childElementCount!=0){  
+            div.removeChild(result_div[0])
+             }
         const child=document.getElementById("parent-box").childElementCount
         // console.log(child)
         const cards=document.getElementById("parent-box")
@@ -139,5 +162,5 @@ function carousel() {
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}    
   x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 9000); // Change image every 2 seconds
+  setTimeout(carousel, 2000); // Change image every 2 seconds
 }
