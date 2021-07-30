@@ -259,4 +259,14 @@ color: white;
 .result-heading{
     margin-top:60px;
 }
+.ins-img{
+height:60px;
+width:60px;
+}
+.footer{
+    display:flex;
+    flex-direction: column;
+    height:50%;
+}
+
 }
